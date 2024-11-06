@@ -1,0 +1,19 @@
+{
+    "name": "Interaccion con Stackholders",
+    "description": "Scrapea desde otra pagina",
+    "manifest_version": 3,
+    "version": "1.0",
+    "background":{
+        "service_worker":"background.js"
+    },
+    "permissions":["activeTab","scripting"],
+    "action":{
+        "default_popup": "index.html"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://www.linkedin.com/*"],
+          "js": ["./contentscript.js"]
+        }
+      ]
+}
